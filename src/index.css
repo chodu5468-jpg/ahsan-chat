@@ -1,0 +1,143 @@
+/* ------------------------------------------------------------------
+   Ahsan.Dev — design tokens
+   Concept: a quiet, lamp-lit place to talk with your people after
+   the day winds down. Warm amber light against deep mossy dark;
+   soft linen paper in daylight mode.
+
+   Type: Fraunces (display/serif, used for the wordmark and headings)
+         Work Sans (UI/body — clean, a little wide, not Inter)
+
+   Palette (named):
+     --ink        #1B211D  deep green-black (dark surfaces)
+     --ink-raised #232B25  dark mode card surface
+     --amber      #E3A857  primary accent (lamp light)
+     --moss       #4B6355  secondary accent / links
+     --paper      #F1EEE4  light mode background
+     --paper-line #DCD5C4  light mode hairlines
+     --graphite   #2A2926  light mode text
+     --dusk-line  #333B34  dark mode hairlines
+     --clay       #B65C43  used sparingly for destructive/alerts
+   ------------------------------------------------------------------ */
+
+:root {
+  --amber: #e3a857;
+  --amber-strong: #c98a3d;
+  --moss: #4b6355;
+  --clay: #b65c43;
+
+  --font-display: "Fraunces", "Iowan Old Style", serif;
+  --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+
+  --shadow-soft: 0 1px 2px rgba(20, 20, 15, 0.06);
+
+  color-scheme: light;
+}
+
+/* Light theme (default) */
+:root,
+[data-theme="light"] {
+  --bg: #f1eee4;
+  --bg-raised: #ffffff;
+  --bg-sunken: #e8e3d4;
+  --text: #2a2926;
+  --text-muted: #6b6558;
+  --line: #dcd5c4;
+  --accent: var(--amber-strong);
+  --accent-contrast: #2a2926;
+  --bubble-mine: #e3a857;
+  --bubble-mine-text: #241c0f;
+  --bubble-theirs: #ffffff;
+  --bubble-theirs-text: #2a2926;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #1b211d;
+  --bg-raised: #232b25;
+  --bg-sunken: #161b17;
+  --text: #ece7d9;
+  --text-muted: #9aa79c;
+  --line: #333b34;
+  --accent: var(--amber);
+  --accent-contrast: #1b211d;
+  --bubble-mine: #e3a857;
+  --bubble-mine-text: #241c0f;
+  --bubble-theirs: #2b332c;
+  --bubble-theirs-text: #ece7d9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--moss);
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--amber);
+  color: #241c0f;
+}
+
+/* visible keyboard focus everywhere, no reliance on default outline color */
+:focus-visible {
+  outline: 2px solid var(--moss);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+.app-shell {
+  height: 100%;
+  width: 100%;
+}
