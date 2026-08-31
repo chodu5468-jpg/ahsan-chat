@@ -1,0 +1,15 @@
+{
+  "name": "ahsan-chat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ahsan.Dev Chat - a private messaging app for friends",
+  "scripts": {
+    "postinstall": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm start --prefix backend",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

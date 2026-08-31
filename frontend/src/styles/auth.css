@@ -1,0 +1,143 @@
+.auth {
+  min-height: 100vh;
+  display: flex;
+}
+
+.auth__brand {
+  flex: 0 0 58%;
+  background: var(--color-surface-alt);
+  padding: 3rem clamp(1.5rem, 5vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth__brand-copy {
+  max-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth__brand-copy h1 {
+  font-weight: 500;
+}
+
+.auth__brand-copy p {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  max-width: 26rem;
+}
+
+.auth__motif {
+  width: min(260px, 60%);
+  height: auto;
+  align-self: flex-end;
+  opacity: 0.95;
+}
+
+.auth__panel {
+  flex: 1;
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem clamp(1.5rem, 4vw, 4rem);
+}
+
+.auth__panel-top {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.auth__form-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 24rem;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+.auth__form-wrap h2 {
+  font-weight: 500;
+}
+
+.auth__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.auth__error {
+  font-size: 0.85rem;
+  color: var(--color-danger);
+}
+
+.auth__submit {
+  margin-top: 0.4rem;
+  padding: 0.85rem 1.4rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  font-weight: 600;
+  font-size: 0.95rem;
+  align-self: flex-start;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+
+.auth__submit:hover {
+  transform: translateY(-1px);
+}
+
+.auth__submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+}
+
+.auth__switch {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 0;
+}
+
+.auth__switch:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 860px) {
+  .auth {
+    flex-direction: column;
+  }
+
+  .auth__brand {
+    flex: none;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .auth__brand-copy h1 {
+    font-size: 1.6rem;
+  }
+
+  .auth__motif {
+    display: none;
+  }
+
+  .auth__panel {
+    padding: 1.5rem;
+  }
+
+  .auth__form-wrap {
+    max-width: none;
+  }
+}
